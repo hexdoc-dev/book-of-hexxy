@@ -1,0 +1,18 @@
+{% extends "hexdoc:components/welcome.html.jinja" %}
+
+{% block content %}
+  <h1>{{ _("hexxybook.welcome.header").format(mod_name) }}</h1>
+
+  {{ fmt.styled(_f("hexxybook.welcome.content")) }}
+  {% if is_bleeding_edge %}
+    {{ fmt.styled(_f("hexdoc.welcome.bleeding_edge")) }}
+  {% endif %}
+  {{ fmt.styled(_f("hexdoc.welcome.spoilers")) }}
+
+  <h2>{{ _("hexxybook.welcome.source_books") }}</h2>
+  <ul>
+    {% for source_book in source_books %}
+      <li><a href="{{ source_book.book_url }}">{{ _("hexdoc."~source_book.modid~".title") }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

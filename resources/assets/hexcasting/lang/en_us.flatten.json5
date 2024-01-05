@@ -1,8 +1,16 @@
 {
   hexdoc: {
-    "hexxybook": {
+    hexxybook: {
       title: "Book of Hexxy",
       description: "The Book of Hexxy, all in one place.",
     },
-  }
+  },
+
+  hexxybook: {
+    welcome: {
+      header: "This is the Book of Hexxy.",
+      content: "The Hex Casting book can be viewed here, with content from several $(l:https://pypi.org/project/hexdoc/)hexdoc/$-compatible addons. $(italic)(If your addon is missing, $(l:https://github.com/hexdoc-dev/book-of-hexxy/issues)open an issue!$(/l))/$",
+      source_books: "Source Books"
+    },
+  },
 }

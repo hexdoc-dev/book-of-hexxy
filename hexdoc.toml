@@ -5,9 +5,7 @@ default_branch = "main"
 
 resource_dirs = [  # top takes priority
     "resources",
-    "{_common.src}/main/resources",
-    { path="{^_common.src}/generated/resources", required=false },
-    { modid="hexcasting" },
+    { modid="hexcasting", internal=true },
     { modid="minecraft" },
     { modid="hexdoc" },
 ]
@@ -24,21 +22,12 @@ include = [
 [template.args]
 mod_name = "Book of Hexxy"
 author = "hexdoc-dev"
-show_landing_text = false
+show_landing_text = true
+
+[textures]
+missing = [
+    "emi:tag/*",
+]
 
 [extra.hexcasting]
-# regexes for parsing pattern registry files - try running copier update and picking a different regex if your patterns aren't loading
-# NOTE: "!Raw" means "don't apply variable interpolation to this value"
-_pattern_regex = { "!Raw"='make\(\s*"(?P<name>[a-zA-Z0-9_\/]+)",\s*(?:new )?(?:ActionRegistryEntry|OperationAction)\(\s*HexPattern\.fromAngles\(\s*"(?P<signature>[aqweds]+)",\s*HexDir.(?P<startdir>\w+)\)' }
-_per_world_value = "true"
-
-[[extra.hexcasting.pattern_stubs]]
-path = "{^^^_common.package}/registry/HexxybookPatternRegistry.java"
-regex = "{^_pattern_regex}"
-per_world_value = "{^_per_world_value}"
-
-# platforms
-
-[_common]
-src = "../src"
-package = "{src}/main/java/com/example/hexxybook"
+pattern_stubs = []

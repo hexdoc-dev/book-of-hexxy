@@ -30,9 +30,12 @@ source = "gradle-properties"
 py-path = "src/hexdoc_hexxybook/__version__.py"
 key = "minecraftVersion"
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.metadata.hooks.gradle-properties]
 dependencies = [
-    "hexdoc~=1!0.1.0a9",
+    "hexdoc~=1!0.1.0a10.dev",
     { package="hexdoc-hexcasting", op="~=", py-version="1.0.dev22", key="hexcastingVersion" },
 ]
 
@@ -44,17 +47,15 @@ dev = [
 # directory inclusion
 
 [tool.hatch.build]
-only-include = [
-    "src/hexdoc_hexxybook",
-    "gradle.properties",
-]
 artifacts = [
     "/src/hexdoc_hexxybook/_export/generated",
     "/src/hexdoc_hexxybook/__gradle_version__.py",
 ]
 
 [tool.hatch.build.targets.wheel]
-sources = ["src"]
+packages = [
+    "src/hexdoc_hexxybook",
+]
 
 # hexdoc entry points
 
