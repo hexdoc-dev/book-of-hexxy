@@ -37,6 +37,8 @@ allow-direct-references = true
 dependencies = [
     "hexdoc~=1!0.1.0a10.dev",
     { package="hexdoc-hexcasting", op="~=", py-version="1.0.dev22", key="hexcastingVersion" },
+    { package="hexdoc-oneironaut", op="~=", py-version="1.0", key="oneironautVersion" },
+    "hexdoc-hexgloop @ https://github.com/SamsTheNerd/HexGloop/raw/af72e6cc318d/docs/v/latest/main/dist/hexdoc_hexgloop-0.2.1.1.0.dev0-py3-none-any.whl",
 ]
 
 [tool.hatch.metadata.hooks.gradle-properties.optional-dependencies]

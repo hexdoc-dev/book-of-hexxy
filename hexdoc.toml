@@ -1,10 +1,16 @@
 modid = "hexxybook"
 book = "hexcasting:thehexbook"
+extra_books = [
+    "hexgloop:hexgloopbook",
+    "oneironaut:oneironautbook",
+]
 default_lang = "en_us"
 default_branch = "main"
 
 resource_dirs = [  # top takes priority
     "resources",
+    { modid="oneironaut", internal=true },
+    { modid="hexgloop", internal=true },
     { modid="hexcasting", internal=true },
     { modid="minecraft" },
     { modid="hexdoc" },
@@ -15,6 +21,8 @@ export_dir = "src/hexdoc_hexxybook/_export/generated"
 icon = "icon.png"
 include = [
     "hexxybook",
+    "oneironaut",
+    "hexgloop",
     "hexcasting",
     "hexdoc",
 ]
@@ -27,6 +35,8 @@ show_landing_text = true
 [textures]
 missing = [
     "emi:tag/*",
+    "hexgloop:fake_spellbook_for_rei",
+    "minecraft:chest",
 ]
 
 [extra.hexcasting]
