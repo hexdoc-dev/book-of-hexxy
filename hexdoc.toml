@@ -33,6 +33,7 @@ author = "hexdoc-dev"
 show_landing_text = true
 
 [textures]
+enabled = false
 missing = [
     "emi:tag/*",
     "hexgloop:fake_spellbook_for_rei",
