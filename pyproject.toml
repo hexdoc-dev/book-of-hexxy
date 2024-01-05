@@ -9,14 +9,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "hexdoc-hexxybook"
-description = "Python web book docgen and hexdoc plugin for Book of Hexxy."
-readme = "doc/README.md"
+dynamic = ["version", "dependencies", "optional-dependencies"]
+description = "Python web book docgen and hexdoc plugin for the Book of Hexxy."
+readme = "README.md"
 authors = [
-    { name="hexdoc-dev" },
+    { name="object-Object" },
 ]
 keywords = ["hexdoc"]
 requires-python = ">=3.11"
-dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.urls]
 Homepage = "https://book.hexxy.media"
@@ -28,16 +28,17 @@ Source = "https://github.com/hexdoc-dev/book-of-hexxy"
 scheme = "gradle"
 source = "gradle-properties"
 py-path = "src/hexdoc_hexxybook/__version__.py"
-key = "modVersion"
+key = "minecraftVersion"
 
 [tool.hatch.metadata.hooks.gradle-properties]
 dependencies = [
-    { package="hexdoc-hexcasting", op="~=", py-version="1.0.dev20", key="hexcastingVersion" },
+    "hexdoc~=1!0.1.0a9",
+    { package="hexdoc-hexcasting", op="~=", py-version="1.0.dev22", key="hexcastingVersion" },
 ]
 
 [tool.hatch.metadata.hooks.gradle-properties.optional-dependencies]
 dev = [
-    "ruff~=0.1.4",
+    "ruff~=0.1.11",
 ]
 
 # directory inclusion
@@ -53,7 +54,7 @@ artifacts = [
 ]
 
 [tool.hatch.build.targets.wheel]
-sources = ["doc/src"]
+sources = ["src"]
 
 # hexdoc entry points
 
@@ -66,8 +67,8 @@ hexxybook = "hexdoc_hexxybook._hooks:HexxyBookPlugin"
 pythonVersion = "3.11"
 pythonPlatform = "All"
 
-include = ["doc/src"]
-extraPaths = ["doc/src"]
+include = ["src"]
+exclude = ["venv"]
 
 typeCheckingMode = "basic"
 

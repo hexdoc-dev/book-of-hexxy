@@ -1,6 +1,6 @@
 # hexdoc-hexxybook
 
-Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for Book of Hexxy.
+Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for the Book of Hexxy.
 
 ## Version scheme
 
@@ -24,7 +24,6 @@ python3.11 -m venv venv
 . venv/bin/activate.fish  # fish
 source venv/bin/activate  # everything else
 
-# run from the repo root, not doc/
 pip install -e .[dev]
 ```
 
@@ -43,7 +42,7 @@ Useful commands:
 hexdoc -h
 
 # render and serve the web book in watch mode
-nodemon --config doc/nodemon.json
+nodemon
 
 # render and serve the web book
 hexdoc serve
