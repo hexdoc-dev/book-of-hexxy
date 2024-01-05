@@ -17,6 +17,14 @@ resource_dirs = [  # top takes priority
 ]
 export_dir = "src/hexdoc_hexxybook/_export/generated"
 
+[textures]
+enabled = false
+missing = [
+    "emi:tag/*",
+    "hexgloop:fake_spellbook_for_rei",
+    "minecraft:chest",
+]
+
 [template]
 icon = "icon.png"
 include = [
@@ -31,14 +39,6 @@ include = [
 mod_name = "Book of Hexxy"
 author = "hexdoc-dev"
 show_landing_text = true
-
-[textures]
-enabled = false
-missing = [
-    "emi:tag/*",
-    "hexgloop:fake_spellbook_for_rei",
-    "minecraft:chest",
-]
 
 [extra.hexcasting]
 pattern_stubs = []
