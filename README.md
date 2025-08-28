@@ -2,6 +2,10 @@
 
 Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for the Book of Hexxy.
 
+## Archival notice
+
+The Book of Hexxy project has been moved to [HexBug](https://github.com/object-Object/HexBug) v2.
+
 ## Version scheme
 
 We use [hatch-gradle-version](https://pypi.org/project/hatch-gradle-version) to generate the version number based on whichever mod version the docgen was built with.
